@@ -15,7 +15,7 @@ public class IOHandler {
 
 		try {
 			reader  = new BufferedReader(new FileReader("savedFavourites.txt")); //reads from filed savedFavourites.txt
-			this.readFavouritesStartUp(); 
+			this.readFavouritesStartUp();
 		}  catch (FileNotFoundException e) {
 			System.err.println("The file could not be found"); //Exception caught if there is a problem reading from file.
 		}
@@ -54,11 +54,11 @@ public class IOHandler {
 	}
 
 	public void readFavouritesStartUp(){
-		while(this.isReady()==true) { 
+		while(this.isReady()==true) {
 			try {
 				String[] favouritedImages = this.getLine().split(":");
 				juliaFavs.add(new Complex(Double.parseDouble(favouritedImages[0]),Double.parseDouble(favouritedImages[1])));
-				
+
 			} catch (NumberFormatException e){
 			}
 		}	
@@ -109,8 +109,8 @@ public class IOHandler {
 		Complex[] complexStrings = new Complex[juliaFavs.size()];
 
 		for (int i = 0; i < juliaFavs.size(); i++) {
-			complexStrings[i] = juliaFavs.get(i);  
-		}	
+			complexStrings[i] = juliaFavs.get(i);
+		}
 
 		return complexStrings;
 

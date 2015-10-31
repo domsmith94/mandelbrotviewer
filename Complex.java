@@ -48,7 +48,7 @@ public class Complex {
 	public Double modulus(){
 		Double modSquared = this.modulusSquared();
 		Double mod = Math.sqrt(modSquared);
-		return mod;	
+		return mod;
 
 		//Returns the modulus of given complex number. Not used to calculate Mandelbrot set or Julia set
 		//Used in smooth coloring algorithm. 
@@ -57,7 +57,7 @@ public class Complex {
 	public void add(Complex d){
 		this.realNum = this.realNum + d.getRealNum();
 		this.imagNum = this.imagNum + d.getImagNum();
-	} 
+	}
 
 	public void resetConstant(){
 		this.imagNum = 0.00;
@@ -67,7 +67,7 @@ public class Complex {
 	public boolean isImagNegative(){
 		if (this.imagNum < 0){
 			return true;
-		} else 
+		} else
 			return false;
 
 	}

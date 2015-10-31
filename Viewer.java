@@ -62,9 +62,9 @@ class ViewerFrame extends JFrame {
 		juliaCtrlPanel.init();
 
 		viewerContainer = new JPanel();
-		viewerContainer.setLayout(new BoxLayout(viewerContainer, BoxLayout.X_AXIS)); 
+		viewerContainer.setLayout(new BoxLayout(viewerContainer, BoxLayout.X_AXIS));
 		viewerContainer.add(mandelbrotPanel);
-		viewerContainer.add(juliaPanel); 
+		viewerContainer.add(juliaPanel);
 		//Mandelbrot set image and Julia set images are displayed next to each other horizontally within viewerContainer
 
 		JPanel ctrlContainer = new JPanel();
@@ -73,7 +73,7 @@ class ViewerFrame extends JFrame {
 		ctrlContainer.add(juliaCtrlPanel);
 		//The two control panels are displayed next to each other horizontally within ctrlContainer
 
-		Container panel = this.getContentPane(); 
+		Container panel = this.getContentPane();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		panel.add(viewerContainer);
 		panel.add(ctrlContainer);
@@ -148,7 +148,7 @@ class ViewerFrame extends JFrame {
 		public void generateImage(BufferedImage image){
 			Calculator calculator = new Calculator(numberOfIterations); //Calculator object needed for work out values and generate image
 
-			int xWidth = this.getWidth();  
+			int xWidth = this.getWidth();
 			int yHeight = this.getHeight();
 
 			/*
@@ -212,7 +212,7 @@ class ViewerFrame extends JFrame {
 			Double yImag;
 			int yHeight = getHeight();
 
-			yImag = ((((imagAxisStart - imagAxisEnd) / yHeight) * yCord) + imagAxisEnd); 
+			yImag = ((((imagAxisStart - imagAxisEnd) / yHeight) * yCord) + imagAxisEnd);
 
 			return yImag;
 
@@ -307,13 +307,13 @@ class ViewerFrame extends JFrame {
 			layout.putConstraint(SpringLayout.EAST, lblNumberSelected, -5, SpringLayout.EAST, this);
 			layout.putConstraint(SpringLayout.NORTH, lblNumberSelected, 5, SpringLayout.SOUTH, lblClickedNum);
 
-			this.setSize(600, 100);			
+			this.setSize(600, 100);
 
 			updateTextField(); //Method to populate textField with correct information from variables.
 		}
 
 		public void updateTextField(){
-			txtXAxisStart.setText(String.format("%.2f", realAxisStart)); 
+			txtXAxisStart.setText(String.format("%.2f", realAxisStart));
 			txtXAxisEnd.setText(String.format("%.2f", realAxisEnd));
 			txtYAxisStart.setText(String.format("%.2f", imagAxisStart));
 			txtYAxisEnd.setText(String.format("%.2f", imagAxisEnd));
@@ -361,10 +361,10 @@ class ViewerFrame extends JFrame {
 		}
 
 		public void generateImage(BufferedImage image){
-			Calculator calculator = new Calculator(numberOfIterations, juliaConstant); 
+			Calculator calculator = new Calculator(numberOfIterations, juliaConstant);
 			//Calculator is told how many iterations to iterate to and the juliaConstant it is working with.
 
-			int xWidth = this.getWidth();  
+			int xWidth = this.getWidth();
 			int yHeight = this.getHeight();
 
 			Double xReal;
@@ -380,7 +380,7 @@ class ViewerFrame extends JFrame {
 					int iterTaken = calculator.calculateJulia(complex); //Returns the number of iterations taken.
 
 					if(iterTaken == numberOfIterations){
-						juliaCanvas.setRGB(x, y, Color.black.getRGB());	
+						juliaCanvas.setRGB(x, y, Color.black.getRGB());
 					} else {
 						double smooth = iterTaken + 1 - Math.log(Math.log(calculator.juliaD.modulus())  / Math.log(2.0));
 						double nsmooth = smooth / numberOfIterations;
@@ -409,7 +409,7 @@ class ViewerFrame extends JFrame {
 			Double yImag;
 			int yHeight = this.getHeight();
 
-			yImag = ((((IMAGYAXISSTART - IMAGYAXISEND) / yHeight) * yCord) + IMAGYAXISEND); 
+			yImag = ((((IMAGYAXISSTART - IMAGYAXISEND) / yHeight) * yCord) + IMAGYAXISEND);
 
 			return yImag;
 
@@ -453,7 +453,7 @@ class ViewerFrame extends JFrame {
 
 			//comboBox is filled with Complex numbers using the fillComboBox method from the IOHandler class.
 
-			comboJulia = new JComboBox<Complex>(favouriter.fillComboBox()); 
+			comboJulia = new JComboBox<Complex>(favouriter.fillComboBox());
 			this.add(comboJulia);
 			comboJulia.addActionListener(new ComboBoxListener());
 
@@ -471,7 +471,7 @@ class ViewerFrame extends JFrame {
 	}
 
 
-	class UpdateListener implements ActionListener{	
+	class UpdateListener implements ActionListener{
 
 		public UpdateListener(){}
 
@@ -617,7 +617,7 @@ class ViewerFrame extends JFrame {
 
 
 		public void mouseClicked(MouseEvent e) {
-			mandelbrotPanel.dragging = false; 
+			mandelbrotPanel.dragging = false;
 
 		}
 
@@ -690,7 +690,7 @@ class ViewerFrame extends JFrame {
 		}
 
 
-		public void mouseEntered(MouseEvent e) {}			
+		public void mouseEntered(MouseEvent e) {}
 
 		public void mouseExited(MouseEvent e) {}
 
