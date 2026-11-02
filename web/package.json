@@ -1,0 +1,25 @@
+{
+  "name": "fractal-explorer",
+  "private": true,
+  "version": "2.0.0",
+  "description": "WebGL2 Mandelbrot / Julia explorer, modernised from the 2014 Java Swing Fractal Viewer",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "golden": "javac -d scripts/.java-build ../*.java scripts/GenerateGolden.java && java -cp scripts/.java-build GenerateGolden > src/fractal/__fixtures__/java-golden.json"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "eslint": "^9.39.5",
+    "globals": "^15.15.0",
+    "typescript": "~5.6",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^5.4.21",
+    "vitest": "^2.1.9"
+  }
+}
