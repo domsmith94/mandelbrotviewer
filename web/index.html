@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Real-time GPU Mandelbrot and Julia set explorer" />
+    <title>Fractal Explorer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <h1>Fractal Explorer</h1>
+        <span class="tagline">Mandelbrot &amp; Julia sets · GPU-rendered · v2</span>
+      </div>
+      <div class="toolbar">
+        <div class="group">
+          <label for="iterations-range">Iterations</label>
+          <input id="iterations-range" type="range" min="0" max="1000" step="1" />
+          <input id="iterations-input" type="number" inputmode="numeric" />
+        </div>
+        <div class="group">
+          <label for="palette">Palette</label>
+          <select id="palette"></select>
+        </div>
+        <div class="group segmented" role="group" aria-label="Drag mode">
+          <button id="drag-pan" type="button" title="Drag to pan (Shift+drag for box zoom)">Pan</button>
+          <button id="drag-box" type="button" title="Drag a box to zoom (Shift+drag to pan)">Box zoom</button>
+        </div>
+        <div class="group">
+          <button id="reset" type="button" title="Reset views and iterations (R)">Reset</button>
+          <button id="share" type="button" class="primary" title="Copy a link to this exact view">Copy link</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="panels">
+      <section id="mandelbrot" aria-label="Mandelbrot set"></section>
+      <section id="julia" aria-label="Julia set"></section>
+    </main>
+
+    <footer class="bottombar">
+      <div class="group julia-info">
+        <span class="label">Julia c =</span>
+        <span id="julia-c" class="mono"></span>
+        <button id="live-status" type="button" class="chip" title="Toggle following the cursor over the Mandelbrot set (L)"></button>
+      </div>
+      <div class="group">
+        <select id="favourites" aria-label="Favourite Julia constants"></select>
+        <button id="add-favourite" type="button">Add</button>
+        <button id="remove-favourite" type="button">Remove</button>
+        <label class="button" title="Import a savedFavourites.txt from the 2014 Java version">
+          Import<input id="import-favourites" type="file" accept=".txt,text/plain" hidden />
+        </label>
+        <button id="export-favourites" type="button" title="Export in the savedFavourites.txt format">Export</button>
+      </div>
+      <div class="group">
+        <button id="save-mandelbrot" type="button">Save Mandelbrot PNG</button>
+        <button id="save-julia" type="button">Save Julia PNG</button>
+      </div>
+      <p class="hint">
+        Scroll or pinch to zoom · drag to pan · Shift+drag to box-zoom · click the Mandelbrot set to pick a Julia point
+        and follow the cursor, click again to pin
+      </p>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
