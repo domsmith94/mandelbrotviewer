@@ -11,7 +11,7 @@
     "test": "vitest run",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "golden": "javac -d scripts/.java-build ../*.java scripts/GenerateGolden.java && java -cp scripts/.java-build GenerateGolden > src/fractal/__fixtures__/java-golden.json"
+    "golden": "javac -d scripts/.java-build ../java/*.java scripts/GenerateGolden.java && java -cp scripts/.java-build GenerateGolden > src/fractal/__fixtures__/java-golden.json"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",

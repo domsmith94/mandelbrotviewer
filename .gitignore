@@ -1,2 +1,5 @@
 
 .idea/
+java/out/
+java/savedFavourites.txt
+java/*.png

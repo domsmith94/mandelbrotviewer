@@ -1,6 +1,6 @@
 # Fractal Explorer v2 (web)
 
-A TypeScript + WebGL2 port of the 2014 Java Swing Fractal Viewer in the repository root. It renders the Mandelbrot and Julia sets on the GPU in real time and runs in any modern browser, including Safari on macOS.
+A TypeScript + WebGL2 port of the 2014 Java Swing Fractal Viewer in [`../java`](../java). It renders the Mandelbrot and Julia sets on the GPU in real time and runs in any modern browser, including Safari on macOS.
 
 ## Features
 - Mandelbrot and Julia sets side by side, rendered by a GPU fragment shader at 60 fps and at full Retina resolution.
